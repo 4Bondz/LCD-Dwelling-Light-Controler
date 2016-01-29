@@ -36,17 +36,17 @@ The circuit:
 #include <LiquidCrystal.h> //include the library code
 int menuLevel = 0; //menu navigation variable. Each button is tied to a "level" that tells the 
 int ledBrightness = 0; //LED brightness control variable
-unsigned long minutesLeft = 0; //A timer that stores the variable that millisecondtimeChange will count to
-unsigned long millisecondCounter = 0; //A continuous counter variable that keeps time
-unsigned long millisecondTimeChange = 0; //A variable that counts the time change since the last press of the center button on menuLevel 3
-unsigned long millisecondTime = 0; //A variable that stores the last time the center button on menuLevel 3 was pressed
-boolean isTimerRunning = false; //A boolean that determines if the timer is running
 int ledPin = 6; //select the pin connected directly to a single LED or to a transistor that controls several LEDs
 int backButton = 7; //select the reset button pin for the LCD menu
 int buttonLeft = 8; //select the leftmost button pin
 int buttonCenter = 9; //select the center button pin
 int buttonRight = 10; //select the rightmost button pin
 int lightPin = 13; //select the pin connected to the gate pin of a transistor
+unsigned long minutesLeft = 0; //A timer that stores the variable that millisecondtimeChange will count to
+unsigned long millisecondCounter = 0; //A continuous counter variable that keeps time
+unsigned long millisecondTimeChange = 0; //A variable that counts the time change since the last press of the center button on menuLevel 3
+unsigned long millisecondTime = 0; //A variable that stores the last time the center button on menuLevel 3 was pressed
+boolean isTimerRunning = false; //A boolean that determines if the timer is running
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2); // initialize the library with the numbers of the interface pins
 
 void setup() {
