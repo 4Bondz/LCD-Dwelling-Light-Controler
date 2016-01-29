@@ -154,15 +154,6 @@ void loop() {
     digitalWrite(lightPin,HIGH);
     return;
   }
-    /*                       //Debug code for the timer. If it is not working properly, uncomment the code to debug
-    if(menuLevel == 3) {
-    lcd.setCursor(0,4);
-    lcd.print(millisecondTime);
-    lcd.setCursor(10,4);
-    lcd.print(millisecondCounter);
-    delay(100);
-    }
-    */
 }
 void mainMenu() {
   menuLevel = 0; //return to the main menuLevel
