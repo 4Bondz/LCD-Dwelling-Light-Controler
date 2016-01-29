@@ -47,8 +47,8 @@ int buttonLeft = 8; //select the leftmost button pin
 int buttonCenter = 9; //select the center button pin
 int buttonRight = 10; //select the rightmost button pin
 int lightPin = 13; //select the pin connected to the gate pin of a transistor
-
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2); // initialize the library with the numbers of the interface pins
+
 void setup() {
   pinMode(ledPin,OUTPUT); // initialize outputs for LEDs and lights
   pinMode(lightPin,OUTPUT);
