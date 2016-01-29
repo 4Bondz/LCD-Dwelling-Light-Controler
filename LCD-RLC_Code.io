@@ -169,5 +169,5 @@ void mainMenu() {
   lcd.setCursor(0,1);
   lcd.print("LED Control");
   lcd.setCursor(0,2);
-  lcd.print("Lights2");
+  lcd.print("Timer");
 }
