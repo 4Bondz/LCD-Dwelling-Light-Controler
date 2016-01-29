@@ -101,12 +101,12 @@ void loop() {
     return;
   }
   if(buttonRightState == HIGH && menuLevel == 2 && ledBrightness < 255) { //manipulate the PWM signal from ledPin
-    ledBrightness = (ledBrightness + 5); //adjust X in the command ledBrightness + X to increase or decrease magnitude of change with each button press. For proper function, 255 must be evenly divisible by X
+    ledBrightness = (ledBrightness + 5); //adjust X in the command ledBrightness + X to increase or decrease the magnitude of change with each button press. For proper function, 255 must be evenly divisible by X
     analogWrite(ledPin,ledBrightness);
     delay(50);
   }
   if(buttonLeftState == HIGH && menuLevel == 2 && ledBrightness > 0) { //manipulate the PWM signal from ledPin
-    ledBrightness = (ledBrightness - 5); //adjust X in the command ledBrightness + X to increase or decrease magnitude of change with each button press. For proper function, 255 must be evenly divisible by X
+    ledBrightness = (ledBrightness - 5); //adjust X in the command ledBrightness + X to increase or decrease the magnitude of change with each button press. For proper function, 255 must be evenly divisible by X
     analogWrite(ledPin,ledBrightness);
     delay(50);
   } 
@@ -124,17 +124,17 @@ void loop() {
     menuLevel = 3; //menuLevel changed
     return;
   }
-  if(buttonLeftState == HIGH && menuLevel == 3 && minutesLeft > 0) { //decrease minutesLeft by 1 uppon left button press.
+  if(buttonLeftState == HIGH && menuLevel == 3 && minutesLeft > 0) { //decrease minutesLeft by 1 when the left button is pressed.
     minutesLeft = minutesLeft - 1; //adjust X in the command minutesLeft - X to increase or decrease magnitude of change with each button press.
     lcd.setCursor(2,1);
     lcd.print(minutesLeft);
-    delay(250);
+    delay(250); //minuetsLeft adjustment speed, can be adapted to the user's liking
   }
-  if(buttonRightState == HIGH && menuLevel == 3) { //increase minutesLeft by 1 uppon left button press.
+  if(buttonRightState == HIGH && menuLevel == 3) { //increase minutesLeft by 1 when the right button is pressed.
     minutesLeft = minutesLeft + 1; //adjust X in the command minutesLeft + X to increase or decrease magnitude of change with each button press.
     lcd.setCursor(2,1);
     lcd.print(minutesLeft);
-    delay(250);
+    delay(250); //minuetsLeft adjustment speed, can be adapted to the user's liking
   }
   if(menuLevel == 3) { //if menuLevel = 3, assign millisecondCounter and millisecondTimeChange a value
     millisecondCounter = millis();
