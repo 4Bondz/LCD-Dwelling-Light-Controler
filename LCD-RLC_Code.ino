@@ -28,13 +28,13 @@ The circuit:
  
  Created 16 January 2016
  By Grant Bonds
- Modified 22 January 2016
+ Modified 14 October 2016
  By Grant Bonds
 */
 
 
 #include <LiquidCrystal.h> //include the library code
-int menuLevel = 0; //menu navigation variable. Each button is tied to a "level" that tells the 
+int menuLevel = 0; //menu navigation variable. Each button is tied to a "level" that tells the Arduino what to display.
 int ledBrightness = 0; //LED brightness control variable
 int ledPin = 6; //select the pin connected directly to a single LED or to a transistor that controls several LEDs
 int backButton = 7; //select the reset button pin for the LCD menu
