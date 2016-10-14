@@ -32,6 +32,10 @@ The circuit:
  By Grant Bonds
 */
 
+/*
+int buttonBottom = 0;
+int buttonTop = 1;
+*/
 
 #include <LiquidCrystal.h> //include the library code
 int menuLevel = 0; //menu navigation variable. Each button is tied to a "level" that tells the Arduino what to display.
@@ -50,6 +54,10 @@ boolean isTimerRunning = false; //A boolean that determines if the timer is runn
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2); // initialize the library with the numbers of the interface pins
 
 void setup() {
+/*  
+  pinMode(buttonBottom,INPUT);
+  pinMode(buttonTop,INPUT);
+*/
   pinMode(ledPin,OUTPUT); // initialize outputs for LEDs and lights
   pinMode(lightPin,OUTPUT);
   pinMode(buttonLeft,INPUT); // initalize inputs for buttons
@@ -65,7 +73,10 @@ void loop() {
   int buttonCenterState = digitalRead(buttonCenter);
   int buttonRightState = digitalRead(buttonRight);
   int backButtonState = digitalRead(backButton);
-  
+/*  
+  int buttonTopState = digitalRead(buttonTop);
+  int buttonBottomState = digitalRead(buttonBottom);
+*/ 
   if(backButtonState == HIGH) { //reset the LCD and the program
     mainMenu();
     delay(500);
@@ -154,6 +165,11 @@ void loop() {
     digitalWrite(lightPin,HIGH);
     return;
   }
+ if(buttonBottomState == HIGH && menuLevel == 0) {
+    lcd.clear();
+    lcd.setCursor(0,0);
+    
+ }
 }
 void mainMenu() {
   menuLevel = 0; //return to the main menuLevel
